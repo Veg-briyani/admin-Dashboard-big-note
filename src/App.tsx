@@ -54,7 +54,7 @@ function App() {
             <Route path="notifications" element={<NotificationsContent />} />
             <Route path="NotificationHistoryDashboard" element={<NotificationHistoryDashboard/>} />
             <Route path="AdminNotificationDashboard" element={<AdminNotificationDashboard/>} />
-            <Route path="FakePurchasesPage" element={<FakePurchasesPage/>} />
+            <Route path="PurchasesPage" element={<FakePurchasesPage/>} />
           </Route>
         </Route>
         

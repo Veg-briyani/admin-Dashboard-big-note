@@ -338,7 +338,7 @@ const RoyaltiesContent = () => {
       .reduce((sum, r) => sum + r.amount, 0);
     
     // For demonstration, we'll use a placeholder for month-over-month change
-    const paidChange = '+₹2,500 from last month';
+    const paidChange = '+ from last month';
     
     setStats({
       pendingAmount,

@@ -66,7 +66,6 @@ const SidebarItem = ({ icon, title, to, badge = 0, isCollapsed }: SidebarItemPro
         </div>
       )}
       
-      {/* Right-side visual indicator for active item */}
       {isActive && !isCollapsed && (
         <div className="absolute right-0 top-1/2 transform -translate-y-1/2 h-8 w-1 bg-white rounded-l-full"></div>
       )}
@@ -102,7 +101,6 @@ const Sidebar = () => {
   const [showMiniProfile, setShowMiniProfile] = useState(false);
   const { user, logout } = useAuth();
   
-  // Handle window size
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 1024) {
@@ -110,7 +108,6 @@ const Sidebar = () => {
       }
     };
     
-    // Initial check
     handleResize();
     
     window.addEventListener('resize', handleResize);
@@ -123,7 +120,6 @@ const Sidebar = () => {
         isCollapsed ? 'w-16' : 'w-64'
       }`}
     >
-      {/* Glass overlay on the background for modern effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-indigo-800/90 to-indigo-900/80 backdrop-blur-sm -z-10"></div>
       
       <div className={`p-4 flex ${isCollapsed ? 'justify-center' : 'justify-between'} items-center border-b border-indigo-600/30`}>
@@ -160,7 +156,6 @@ const Sidebar = () => {
         </button>
       </div>
 
-      {/* User profile in sidebar */}
       {!isCollapsed && (
         <div className="mx-3 mt-4 p-3 bg-white/10 rounded-xl">
           <div className="flex items-center">
@@ -258,14 +253,13 @@ const Sidebar = () => {
           <SidebarItem 
             icon={<History size={18} />} 
             title="Notification History" 
-            to="/admin/notification-history" 
-            badge={8}
+            to="/admin/AdminNotificationDashboard"
             isCollapsed={isCollapsed} 
           />
           <SidebarItem 
             icon={<ShoppingBag size={18} />} 
-            title="Fake Purchases" 
-            to="/admin/fake-purchases"
+            title=" Purchases" 
+            to="/admin/PurchasesPage"
             isCollapsed={isCollapsed} 
           />
         </SidebarSection>

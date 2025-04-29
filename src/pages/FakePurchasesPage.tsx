@@ -397,7 +397,7 @@ const FakePurchasesPage = () => {
       )}
     
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
-        <h2 className="text-xl font-bold">Manage Fake Purchases</h2>
+        <h2 className="text-xl font-bold">Manage  Purchases</h2>
         <div className="flex flex-wrap items-center gap-2">
           {/* Search input */}
           <div className="relative w-full sm:w-auto">
@@ -439,10 +439,10 @@ const FakePurchasesPage = () => {
           <button 
             className="flex items-center gap-1 bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors duration-200"
             onClick={() => handleOpenDialog()}
-            aria-label="Create fake purchase"
+            aria-label="Create  purchase"
           >
             <Plus size={16} />
-            Create Fake Purchase
+            Create  Purchase
           </button>
           
           {/* Refresh button */}
@@ -485,7 +485,7 @@ const FakePurchasesPage = () => {
         <div className="bg-white p-4 rounded-lg shadow border hover:shadow-md transition-shadow duration-200">
           <div className="flex justify-between">
             <div>
-              <p className="text-sm text-gray-500">Total Fake Purchases</p>
+              <p className="text-sm text-gray-500">Total  Purchases</p>
               <p className="text-xl font-bold">{stats.totalPurchases}</p>
               <p className="text-xs text-gray-500">
                 {stats.totalPurchases} purchases in database
@@ -555,7 +555,7 @@ const FakePurchasesPage = () => {
         {!loading && filteredPurchases.length === 0 && (
           <div className="text-center py-16 text-gray-500">
             <Book size={48} className="mx-auto text-gray-400 mb-4" />
-            <p className="font-medium text-lg mb-2">No fake purchases found</p>
+            <p className="font-medium text-lg mb-2">No  purchases found</p>
             <p className="text-sm mb-6 max-w-md mx-auto">
               {selectedStatus !== 'all' || searchQuery
                 ? "No purchases match your current filters."
@@ -679,7 +679,7 @@ const FakePurchasesPage = () => {
           >
             <div className="flex justify-between items-center p-6 bg-gray-50 border-b">
               <h3 className="text-lg font-medium text-gray-900">
-                {currentPurchase ? 'Edit Fake Purchase' : 'Create Fake Purchase'}
+                {currentPurchase ? 'Edit  Purchase' : 'Create  Purchase'}
               </h3>
               <button 
                 onClick={handleCloseDialog} 
