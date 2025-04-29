@@ -10,7 +10,7 @@ import {
   Loader,
   AlertCircle
 } from 'lucide-react';
-import notificationService from '../../services/notificationService';
+import { notificationService, adminNotificationService } from '../../services/notificationService';
 import { format } from 'date-fns';
 
 // Define interfaces for the admin notifications
@@ -83,18 +83,12 @@ const AdminNotificationDashboard = () => {
       if (endDate) params.endDate = endDate;
       if (selectedType !== 'all') params.type = selectedType;
       
-      // Make API call to admin notifications endpoint
-      const response = await fetch('/api/notifications/admin?' + new URLSearchParams(params));
+      // Use the service method instead of direct fetch to ensure proper authentication
+      const response = await adminNotificationService.getAdminNotifications(params);
       
-      if (!response.ok) {
-        throw new Error(`Failed to fetch notifications: ${response.status}`);
-      }
-      
-      const data = await response.json() as AdminNotificationResponse;
-      
-      setNotifications(data.notifications);
-      setTotalPages(data.pagination.pages);
-      setTotalItems(data.pagination.total);
+      setNotifications(response.notifications);
+      setTotalPages(response.pagination.pages);
+      setTotalItems(response.pagination.total);
     } catch (err: any) {
       console.error('Error fetching admin notifications:', err);
       setError(err.message || 'Failed to load admin notifications');
@@ -171,7 +165,7 @@ const AdminNotificationDashboard = () => {
         <div>
           <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
             <Bell className="text-indigo-600" size={28} />
-            Admin Notifications
+            Notification History
           </h2>
           <p className="text-gray-500 mt-1">
             View and manage all notifications in the system
