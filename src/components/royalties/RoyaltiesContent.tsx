@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { DollarSign, AlertCircle, CheckCircle, XCircle, Clock, Eye, MoreHorizontal, Search } from 'lucide-react';
+import { DollarSign, AlertCircle, CheckCircle, XCircle, Clock, Eye,  Search } from 'lucide-react';
 import api from '../../services/api';
 
 // Define the Royalty type to match your actual API response

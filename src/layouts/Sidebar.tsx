@@ -215,7 +215,7 @@ const Sidebar = () => {
             icon={<AlertTriangle size={18} />} 
             title="KYC Verification" 
             to="/admin/kyc" 
-            badge={5}
+            badge={0}
             isCollapsed={isCollapsed} 
           />
           <SidebarItem 
@@ -231,7 +231,7 @@ const Sidebar = () => {
             icon={<DollarSign size={18} />} 
             title="Royalty Management" 
             to="/admin/royalties" 
-            badge={3}
+            badge={0}
             isCollapsed={isCollapsed} 
           />
           <SidebarItem 
@@ -247,13 +247,13 @@ const Sidebar = () => {
             icon={<Bell size={18} />} 
             title="Notifications" 
             to="/admin/notifications" 
-            badge={8}
+            badge={0}
             isCollapsed={isCollapsed} 
           />
           <SidebarItem 
             icon={<History size={18} />} 
             title="Notification History" 
-            to="/admin/AdminNotificationDashboard"
+            to="/admin/NotificationHistoryDashboard"
             isCollapsed={isCollapsed} 
           />
           <SidebarItem 
